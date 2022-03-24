@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sueldo</title>
+    <link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="caja">
+        <h1>Ingrese los siguientes datos para saber el importe a cobrar.</h1>
+    <label>Valor hora</label>
+    <input type="text" id="valorhora"><br>
+    <label>Nombre</label>
+    <input type="text" id="nombre"><br>
+    <label>Antiguedad</label>
+    <input type="text" id="antiguedad"><br>
+    <label>Horas trabajadas en el mes.</label>
+    <input type="text" id="horas"><br>
+    <input type="submit" onclick="sueldo()">
+</div>
+</body>
+<script>
+    function sueldo(){
+        let valorhora = document.getElementById("valorhora").value;
+        let nombre = document.getElementById("nombre").value;
+        let antiguedad = document.getElementById("antiguedad").value;
+        let horas = document.getElementById("horas").value;
+        var total=0;
+        total=horas*valorhora;
+        if (antiguedad<=10) 
+            {
+              alert("Nombre:"+nombre+"\nAntiguedad:"+antiguedad+"\nImporte a cobrar:"+total);
+            }else{ 
+                var aporteantiguedad=antiguedad*30;
+                total=total+aporteantiguedad;
+                alert("Nombre:"+nombre+"\nAntiguedad:"+antiguedad+"\nImporte a cobrar:"+total);
+            }
+    }
+</script>
+</html>

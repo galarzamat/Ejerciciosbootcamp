@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contraseña</title>
+</head>
+ <link href="styles.css" rel="stylesheet"/>
+<body>
+    <h1>Ingrese su Contraseña</h1>
+        <div class="caja"><input type="text" id="password"><br>
+        <input type="submit" onclick="validar_contraseña()">
+    </div> 
+</body>
+</html>
+<script>
+ function validar_contraseña(){
+   let contra=prompt("ingrese su contraseña:"); 
+   let cont =0;
+   let validar=comparar_contraseña(contra);
+   while (cont<3 && validar==false ) {
+      prompt("Contraseña incorrecta,ingresela otra vez:"); 
+      cont++;
+   }  
+    if (validar==false) {
+       alert("tenes que mejorar la memoria");
+    } else {
+      alert("Felicitaciones,recordás tu contraseña.");
+    }
+}
+ function comparar_contraseña(contra){
+   let password=document.getElementById("password").value;
+      if(contra==password){
+         return true;
+      }else{
+       return false;
+      }
+ }
+</script>

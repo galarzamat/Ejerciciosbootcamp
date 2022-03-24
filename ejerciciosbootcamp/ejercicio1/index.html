@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros  Primos</title>
+</head>
+ <link href="styles.css" rel="stylesheet"/>
+<body>
+    <h1>Ingrese un Numero para saber si es primo</h1>
+        <div class="caja"><input type="text" id="num"><br>
+        <input type="submit" onclick="primos()">
+    </div> 
+</body>
+</html>
+<script>
+ function primos(){
+    let num = document.getElementById("num").value;
+    var x=0;
+    primo = true
+    for (var x = 2 ; x < num; x++)
+    {  
+
+       if(num%x==0)
+       {
+         primo = false
+       }
+    }
+
+    if (primo == true) 
+    {
+        alert("Es Primo");
+    }
+    else
+    {
+        alert("No es Primo");
+    }
+}
+</script>
